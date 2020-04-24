@@ -26,7 +26,7 @@ public class TablePartA{
       Configuration con = HBaseConfiguration.create();
 
       //Instantiating HbaseAdmin class
-      HBaseAdmin admin = new HbaseAdmin(con);
+      HBaseAdmin admin = new HBaseAdmin(con);
 
       //Instantiating table descriptor class 
       HTableDescriptor tableDescriptor = new
@@ -47,7 +47,7 @@ public class TablePartA{
       Configuration con1 = HBaseConfiguration.create();
 
       //Instantiating HbaseAdmin class
-      HBaseAdmin admin1 = new HbaseAdmin(con1);
+      HBaseAdmin admin1 = new HBaseAdmin(con1);
 
       //Instantiating table descriptor class 
       HTableDescriptor tableDescriptor1 = new
