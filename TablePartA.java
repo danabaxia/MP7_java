@@ -20,20 +20,49 @@ import org.apache.hadoop.hbase.util.Bytes;
 public class TablePartA{
 
    public static void main(String[] args) throws IOException {
-
-      
+      //to do 
+      //first table "powers"
+      //instantiating configuration class
       Configuration con = HBaseConfiguration.create();
-      
+
+      //Instantiating HbaseAdmin class
       HBaseAdmin admin = new HBaseAdmin(con);
-      HTableDescriptor tableDescriptor = new 
-      HTableDescriptor(TableName.valueOf("emp"));
-      
+
+      //Instantiating table descriptor class 
+      HTableDescriptor tableDescriptor = new
+      HTableDescriptor(TableName.valueOf("powers"));
+
+      //adding column families to table descriptor 
       tableDescriptor.addFamily(new HColumnDescriptor("personal"));
       tableDescriptor.addFamily(new HColumnDescriptor("professional"));
-      
+      tableDescriptor.addFamily(new HColumnDescriptor("custom"));
+
+      //Execute the table through admin 
       admin.createTable(tableDescriptor);
-      System.out.println(" Table created ");
-	
+      //System.out.println("Table created");
+      
+      //***********************************************
+      //second table "food"
+      //instantiating configuration class
+      Configuration con1 = HBaseConfiguration.create();
+
+      //Instantiating HbaseAdmin class
+      HBaseAdmin admin1 = new HBaseAdmin(con1);
+
+      //Instantiating table descriptor class 
+      HTableDescriptor tableDescriptor1 = new
+      HTableDescriptor(TableName.valueOf("food"));
+
+      //adding column families to table descriptor 
+      tableDescriptor1.addFamily(new HColumnDescriptor("nutrition"));
+      tableDescriptor1.addFamily(new HColumnDescriptor("taste"));
+
+      //Execute the table through admin 
+      admin1.createTable(tableDescriptor1);
+      //System.out.println("Table created");
+
+
+      
    }
 }
 
