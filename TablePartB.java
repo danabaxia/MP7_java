@@ -21,9 +21,16 @@ public class TablePartB{
 
    public static void main(String[] args) throws IOException {
 
-   	HTableDescriptor[] tableDescriptor = ???;
-	//TODO    
-	for(???){
+    //instantiating a configuration class 
+    Configuration conf = HBaseConfiguration.create();
+
+    //instantiating HBaseadmin class
+    HBaseadmin admin = new HBaseadmin(conf);
+
+   	//getting all the list of tales  using HBaseAdmin object
+   	HTableDescriptor[] tableDescriptor = admin.listTables();
+	//printing all tables    
+	for(int i=0; i < tableDescriptor.length; i++){
          System.out.println(tableDescriptor[i].getNameAsString());
      }
    }
