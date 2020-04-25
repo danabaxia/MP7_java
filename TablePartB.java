@@ -25,7 +25,7 @@ public class TablePartB{
     Configuration conf = HBaseConfiguration.create();
 
     //instantiating HBaseadmin class
-    HBaseadmin admin = new HBaseadmin(conf);
+    HBaseAdmin admin = new HBaseAdmin(conf);
 
    	//getting all the list of tales  using HBaseAdmin object
    	HTableDescriptor[] tableDescriptor = admin.listTables();
